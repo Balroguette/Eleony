@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +25,7 @@ public class Interactable : MonoBehaviour
     {
         if (destroyCooldown > 0 && hasBeenUsed == true && Time.time - lastInteractTime > destroyCooldown)
         {
-            gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
             hasBeenUsed = false;
             lastInteractTime = 0;
             lastScoreTime = 0;
