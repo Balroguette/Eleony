@@ -14,10 +14,11 @@ public class Interactable : MonoBehaviour
     private bool hasBeenUsed;
     float scoreCooldown;
     [HideInInspector] public float lastScoreTime;
+    
 
     private void Start()
     {
-        hasBeenUsed = false;
+        Reset();
         scoreCooldown = destroyCooldown / 2;
     }
 
@@ -26,11 +27,16 @@ public class Interactable : MonoBehaviour
         if (destroyCooldown > 0 && hasBeenUsed == true && Time.time - lastInteractTime > destroyCooldown)
         {
             this.gameObject.SetActive(false);
-            hasBeenUsed = false;
-            lastInteractTime = 0;
-            lastScoreTime = 0;
+            Reset();
         }
         
+    }
+
+    private void Reset()
+    {
+        hasBeenUsed = false; //reset le hasBeenUsed
+        lastInteractTime = 0;
+        lastScoreTime = 0;
     }
     public void Interact()
     {
