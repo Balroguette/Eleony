@@ -31,6 +31,11 @@ public class MovementController : MonoBehaviour
         direction = new Vector3(AxisX, 0, AxisZ);      // créé un v3 qui se base sur les  informations precedement recupérées (chiffres des inputs)
         this.transform.position = this.transform.position + direction * Time.deltaTime * speed;   
         
+        if(AxisX < 0) {
+            transform.localScale = new Vector3(1, 1, 1);
+        } else if(AxisX > 0) {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
         // j'peux creer valeur speed mtn 
 
 
