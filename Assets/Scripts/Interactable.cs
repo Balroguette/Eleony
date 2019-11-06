@@ -6,26 +6,48 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] public bool isBooster;
     [SerializeField] bool isDestroyer;
-    [SerializeField] GameObject objectConcerned;
-    public GameObject FloatingTextPrefab;
+    [SerializeField] protected bool countsAsDisabled;
+
+    [SerializeField] private GameObject objectConcerned;
+    [SerializeField] protected GameManager gameManager;
+    [SerializeField] private GameObject FloatingTextPrefab;
+    protected SpriteRenderer sprRenderer;
     public int scoreValue; //la valeur du score que donnent les differents objectifs
     public float destroyCooldown;
-    float lastInteractTime; //garde le dernier time où joueur a interagit
-    private bool hasBeenUsed;
-    float scoreCooldown;
+    [HideInInspector] public float lastInteractTime; //garde le dernier time où joueur a interagit
+    [HideInInspector] public bool hasBeenUsed;
+    [SerializeField] private float scoreCooldown;
     [HideInInspector] public float lastScoreTime;
-    
+
+    [SerializeField] private Scoring classScore; //quand setactivfalse desactive bar
 
     private void Start()
     {
+        sprRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         Reset();
         scoreCooldown = destroyCooldown / 2;
+        lastScoreTime = Time.time - scoreCooldown; //pour pas avoir le cooldown qui se lance sans activation prealable de l'objet
+    }
+
+    protected virtual void OnEnable()
+    {
+        gameManager.AddObject(this);
+    }
+
+    protected virtual void OnDisable()
+    {
+        if (countsAsDisabled)
+        {
+            gameManager.DisableObject(this);
+        }
     }
 
     private void Update()
     {
         if (destroyCooldown > 0 && hasBeenUsed == true && Time.time - lastInteractTime > destroyCooldown)
         {
+            // ATTENTION JE MEURS
+            classScore.DeleteBar();
             this.gameObject.SetActive(false);
             Reset();
         }
@@ -38,23 +60,32 @@ public class Interactable : MonoBehaviour
         lastInteractTime = 0;
         lastScoreTime = 0;
     }
-    public void Interact()
+
+    public virtual void Interact()
     {
 
         //objectConcerned.SetActive(!isDestroyer);
         if (isDestroyer)
         {
             objectConcerned.SetActive(false);
+            //gameManager.DisableObject(objectConcerned.GetComponent<Interactable>()); //récupération de la référence du script Interactable sur objectConcerned (qui est un gameObject)
         }
         else
         {
             objectConcerned.SetActive(true); //il faut que je dise que je crée un nouvel objet, et non pas accéder à l'ancien
+            //gameManager.AddObject(objectConcerned.GetComponent<Interactable>());
         }
 
         lastInteractTime = Time.time;
 
         hasBeenUsed = true;
     }
+
+    public virtual bool CanInteract()
+    {
+        return true;
+    }
+
     public void Boost()
     {
         // je test le tag isBooster
@@ -70,8 +101,17 @@ public class Interactable : MonoBehaviour
     }
     public void ShowFloatingText()
     {
-        var go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
-        go.GetComponent<TextMesh>().text = scoreValue.ToString();
+        if(scoreValue > 0)
+        {
+            GameObject go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+            go.GetComponent<TextMesh>().text = scoreValue.ToString();
+
+            if(gameManager.scoreMultiplier > 1)
+            {
+                go = Instantiate(FloatingTextPrefab, transform.position + new Vector3(0f, -0.5f, 0f), Quaternion.identity, transform);
+                go.GetComponent<TextMesh>().text = "x" + gameManager.scoreMultiplier.ToString();
+            }
+        }
     }
     public bool ScoreCooldownIsUp()
     {

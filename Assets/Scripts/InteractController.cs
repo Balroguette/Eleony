@@ -1,24 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InteractController : MonoBehaviour
 {
     [SerializeField] string interactTag;
-    public Text scorePoints; //nom doit être different du script, sert à afficher à l'ecran
-    public int numbers; //la valeur que je vais stoquer
-
-    void Start()
-    {
-        numbers = 0; //le score est à zéro
-    }
-
-    void Update()
-    {
-        scorePoints.text = numbers + "$";
-    }
-
+    [SerializeField] GameManager gameManager;
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag(interactTag) && Input.GetKeyDown(KeyCode.Space))
@@ -28,13 +16,12 @@ public class InteractController : MonoBehaviour
 
             interactableScript.Interact();
 
-            if (interactableScript.ScoreCooldownIsUp())
+            if (interactableScript.CanInteract() == true && interactableScript.ScoreCooldownIsUp() == true)
             {
-                numbers = numbers + interactableScript.scoreValue;
+                gameManager.AddScore(interactableScript.scoreValue);
                 interactableScript.lastScoreTime = Time.time;
-                             
+
                 interactableScript.ShowFloatingText();
-                
             }
 
             if (interactableScript.isBooster) 
