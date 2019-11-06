@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 183373790166285152}
   - component: {fileID: 5811187042842053650}
   - component: {fileID: 493470016266629207}
+  - component: {fileID: 7606259454446179336}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: interactable
@@ -121,6 +122,7 @@ MonoBehaviour:
   hasBeenUsed: 0
   scoreCooldown: 0
   lastScoreTime: 0
+  classScore: {fileID: 0}
 --- !u!114 &493470016266629207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,3 +135,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb3072312f0ad84c81ca460a1a796e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7606259454446179336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183373790166285163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b669365150f3e4dae8366b6b7bbb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 5811187042842053650}
+  bar: {fileID: 0}

@@ -19,10 +19,17 @@ public class Interactable : MonoBehaviour
     [SerializeField] private float scoreCooldown;
     [HideInInspector] public float lastScoreTime;
 
-    [SerializeField] private Scoring classScore; //quand setactivfalse desactive bar
+    /*
+    ===================================================================
+    Pas besoin de mettre ce champ en SerializeField car il peut être récupéré dans le Start avec un GetComponent<Scoring> étant donné qu'il est attaché au même objet.
+    Cela évite de devoir assigner manuellement chaque champs classScore d'un Interactable manuellement pour un script qui est attaché au même objet.
+    ===================================================================
+    */
+    private Scoring classScore; //quand setactivfalse desactive bar
 
     private void Start()
     {
+        classScore = this.gameObject.GetComponent<Scoring>();
         sprRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         Reset();
         scoreCooldown = destroyCooldown / 2;
