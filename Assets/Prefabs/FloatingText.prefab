@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1329575245797329151}
   - component: {fileID: 6029841590577805617}
   - component: {fileID: 5984970840959319645}
-  - component: {fileID: 4452844997718641999}
   - component: {fileID: -4459913356595251715}
   m_Layer: 0
   m_Name: FloatingText
@@ -114,22 +113,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4452844997718641999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4452694117175221971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e83fd6e9e13bd479d8c3b3f9bf278c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBooster: 0
-  isDestroyer: 0
-  objectConcerned: {fileID: 0}
-  FloatingTextPrefab: {fileID: 4452694117175221971}
 --- !u!114 &-4459913356595251715
 MonoBehaviour:
   m_ObjectHideFlags: 0
