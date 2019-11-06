@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &874403552610892891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325808801892465249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a0148ae20be3d4d93da8112e53eb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBooster: 0
+  isDestroyer: 0
+  objectConcerned: {fileID: 0}
+  gameManager: {fileID: 0}
+  FloatingTextPrefab: {fileID: 4452694117175221971, guid: 76a40163b65e1ee4eb33aa999af13a82,
+    type: 3}
+  scoreValue: 10
+  destroyCooldown: 0
+  scoreCooldown: 5
+  lastScoreTime: 0
+  nbMaxUse: 3
+  sprWhenChanged: {fileID: 21300000, guid: 44c8f1ca6bbe5d748bd1ea84ca47085c, type: 3}
+--- !u!1001 &3219189733004443914
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 183373790166285163, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_Name
+      value: Interactable_LimitedUse
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285163, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17801496
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183373790166285166, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811187042842053650, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: isDestroyer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811187042842053650, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: objectConcerned
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811187042842053650, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: scoreValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811187042842053650, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: destroyCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811187042842053650, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5811187042842053650, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e, type: 3}
+--- !u!1 &3325808801892465249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 183373790166285163, guid: 7372cea2cf877dc4e8cfd8b8e42ff26e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3219189733004443914}
+  m_PrefabAsset: {fileID: 0}
