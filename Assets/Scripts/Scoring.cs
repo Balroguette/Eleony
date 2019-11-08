@@ -22,7 +22,7 @@ public class Scoring : MonoBehaviour
             if(bar.gameObject.activeInHierarchy == false) {
                 bar.gameObject.SetActive(true);
             }
-            bar.transform.position = Camera.main.WorldToScreenPoint(this.transform.position) + new Vector3(0f, 30f, 0f);
+            bar.transform.position = Camera.main.WorldToScreenPoint(this.transform.position) + new Vector3(0f, 30f, 0f);//30 = offset
         } else {
             if (bar.gameObject.activeInHierarchy == true) {
                 bar.gameObject.SetActive(false);

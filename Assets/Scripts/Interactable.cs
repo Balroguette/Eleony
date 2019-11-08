@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] public bool isBooster;
+    public bool isBooster;
     [SerializeField] bool isDestroyer;
     [SerializeField] protected bool countsAsDisabled;
 
@@ -18,6 +18,7 @@ public class Interactable : MonoBehaviour
     [HideInInspector] public bool hasBeenUsed;
     [SerializeField] private float scoreCooldown;
     [HideInInspector] public float lastScoreTime;
+    public GameObject bar;
 
     /*
     ===================================================================
@@ -25,7 +26,7 @@ public class Interactable : MonoBehaviour
     Cela évite de devoir assigner manuellement chaque champs classScore d'un Interactable manuellement pour un script qui est attaché au même objet.
     ===================================================================
     */
-    private Scoring classScore; //quand setactivfalse desactive bar
+    private Scoring classScore; //quand setactivfalse desactive bar (Anne)
 
     private void Start()
     {
@@ -54,7 +55,8 @@ public class Interactable : MonoBehaviour
         if (destroyCooldown > 0 && hasBeenUsed == true && Time.time - lastInteractTime > destroyCooldown)
         {
             // ATTENTION JE MEURS
-            classScore.DeleteBar();
+            //classScore.DeleteBar();
+            //bar.SetActive(false);
             this.gameObject.SetActive(false);
             Reset();
         }

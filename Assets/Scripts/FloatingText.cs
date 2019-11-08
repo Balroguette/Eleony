@@ -11,14 +11,15 @@ public class FloatingText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.GetComponent<MeshRenderer>().sortingLayerName = "Foreground";
+        transform.Rotate(new Vector3(90f, 0f, 0f));
         Destroy (gameObject, DestroyTime); //détruire le text après son aparition avec le temps
 
-        transform.localPosition += Offset; //positionner avec offset
+        //transform.localPosition += Offset; //positionner avec offset
         /*transform.localPosition += new Vector3(Random.Range(-RandomizeIntensity.x, RandomizeIntensity.x),
             Random.Range(-RandomizeIntensity.y, RandomizeIntensity.y),
             Random.Range(-RandomizeIntensity.z, RandomizeIntensity.z));*/
 
 
     }
-
 }

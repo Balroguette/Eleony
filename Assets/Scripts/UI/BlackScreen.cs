@@ -21,7 +21,7 @@ public class BlackScreen : MonoBehaviour
               
         if (target.hasBeenUsed == true) 
         {
-            imgScreen.color = new Vector4(0, 0, 0, (Time.time - target.lastInteractTime) / target.destroyCooldown);
+            imgScreen.color = new Vector4(1, 1, 1, (Time.time - target.lastInteractTime) / target.destroyCooldown);
         }
     }
 } 

@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: a1dddb48223fc354bb1c2daac73d5711
+guid: d8ac715125f1ef7459a0c50db6c7c160
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -2148500647518176651
-    second: catTale_0
-  - first:
-      213: 6541041903516378899
-    second: catTale_1
-  - first:
-      213: -6086864332241717913
-    second: catTale_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -49,13 +40,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 91}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -93,70 +84,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: catTale_0
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 410
-        width: 97
-        height: 86
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d93d098bcf5326f40ba69c54500e60aa
-      internalID: -2148500647518176651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catTale_1
-      rect:
-        serializedVersion: 2
-        x: 123
-        y: 440
-        width: 27
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47e0970067becff44b24f0c84d440bb7
-      internalID: 6541041903516378899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catTale_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 199
-        height: 398
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e7de0ba0933ce14f936194bc72e3fb6
-      internalID: -6086864332241717913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
