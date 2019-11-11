@@ -9,10 +9,9 @@ public class Interactable_ScoreBooster : Interactable
 
     public override void Interact()
     {
-        base.Interact();
+        base.Interact(); //base appelle la premiere fonction Interact que j'ai faite, pas celle-ci 
         gameManager.scoreMultiplier = scoreMultiplier;
-        //Invoke appelle la fonction "StopMuliplier" en attendant x (multiplierDuration) temps
-        Invoke("StopMultiplier", multiplierDuration);
+        Invoke("StopMultiplier", multiplierDuration); //Invoke appelle la fonction "StopMuliplier" en attendant x (multiplierDuration) temps
     }
 
     private void StopMultiplier()

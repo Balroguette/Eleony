@@ -43,7 +43,7 @@ public class Interactable_Chained : Interactable
 
     private void HandleTarget()
     {
-        //switch case permet à remplacer une imbrication de "if else". Permet de tester un ensemble de valeurs possibles d'une variable (très utile avec les enum)
+        //switch case permet de remplacer une imbrication de "if else". Permet de tester un ensemble de valeurs possibles d'une variable (très utile avec les enum)
         switch (actionOnTarget) {
             case eEVENT.DISABLE:
                 target.gameObject.SetActive(false);

@@ -8,27 +8,20 @@ public class Interactable_LimitedUse : Interactable
     [SerializeField] private Sprite sprWhenChanged;
     private int nbUse = 0;
 
-    public override void Interact()
+    public override void Interact() //interagit un nombre de fois limité 
     {
-        if(nbUse < nbMaxUse) {
-            nbUse += 1;
-            base.Interact();
-        } else {
+        nbUse += 1; //incrémente
+        base.Interact(); //base appelle la premiere fonction Interact que j'ai faite, pas celle-ci
+        if (nbUse == nbMaxUse) // si on atteint la limite
+        {
             //change le sprite
             sprRenderer.sprite = sprWhenChanged;
         }
     }
 
-    public override bool CanInteract()
+    public override bool CanInteract() //vérification
     {
-        if(nbUse < nbMaxUse)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (base.CanInteract() && nbUse < nbMaxUse);
     }
 
     protected override void OnEnable()
